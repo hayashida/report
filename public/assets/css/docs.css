@@ -1,0 +1,26 @@
+/* line 4, ../../../fuel/app/assets-compass/sass/docs.scss */
+.wrapper {
+  margin: 0 auto;
+  width: 95%;
+}
+
+/* line 9, ../../../fuel/app/assets-compass/sass/docs.scss */
+#header {
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 10, ../../../fuel/app/assets-compass/sass/docs.scss */
+#header h1 {
+  float: left;
+}
+/* line 14, ../../../fuel/app/assets-compass/sass/docs.scss */
+#header ul {
+  float: right;
+  margin-top: 20px;
+}
+
+/* line 22, ../../../fuel/app/assets-compass/sass/docs.scss */
+ul.nav-list {
+  padding-bottom: 3px;
+  border: solid 1px #dddddd;
+}
