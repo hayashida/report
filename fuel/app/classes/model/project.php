@@ -31,7 +31,6 @@ class Model_Project extends \Orm\Model
 		$val->add_callable("Myvalidation");
 
 		$val->add("num", "Num");
-
 		$val->add("title", "Title")
 			->add_rule("required");
 

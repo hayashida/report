@@ -20,6 +20,39 @@
 }
 
 ul.nav-list {
-    padding-bottom: 3px;
+    padding-bottom: 10px;
     border: solid 1px #ddd;
+
+    a.btn-primary {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 4px 12px;
+        color: #fff;
+    }
+}
+ul.dropdown-menu {
+    padding-top: 5px;
+}
+
+.docs-tooltip {
+    p {
+        display: none;
+    }
+}
+        
+h3 {
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 21px;
+    line-height: 40px;
+    font-weight: normal;
+    color: #333;
+}
+dl {
+    dt {
+        line-height: 25px;
+        font-size: 14px;
+    }
+    dd {
+        line-height: 25px;
+    }
 }

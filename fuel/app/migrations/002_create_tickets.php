@@ -9,7 +9,6 @@ class Create_tickets
 		\DBUtil::create_table('tickets', array(
 			'id' => array('constraint' => 11, 'type' => 'int', 'auto_increment' => true),
 			'project_id' => array('constraint' => 11, 'type' => 'int'),
-			'priority' => array('constraint' => 11, 'type' => 'int'),
 			'category' => array('constraint' => 255, 'type' => 'varchar'),
 			'func' => array('constraint' => 255, 'type' => 'varchar'),
 			'content' => array('type' => 'text'),

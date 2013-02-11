@@ -23,4 +23,8 @@ return array(
             "orm",
         ),
     ),
+    "validation" => array(
+        "open_list" => "<div class=\"alert alert-error\"><ul>",
+        "close_list" => "</ul></div>",
+    ),
 );

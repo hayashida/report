@@ -2,7 +2,7 @@
     <div class="span9">
         <?php echo Form::open(); ?>
             <fieldset>
-                <legend><?php echo sprintf("%s - %s", $subtitle, FUELTITLE); ?></legend>
+                <legend><?php echo sprintf("%s - %s", $subtitle, "Project"); ?></legend>
                 <?php echo Session::get_flash("errors"); ?>
                 <?php
                     echo Form::label("Num", "num");
@@ -25,7 +25,7 @@
                 ?>
                 <div class="form-actions">
                     <?php echo Form::submit("submit", "Save", array("class" => "btn btn-primary")); ?>
-                    <?php echo Form::submit("reset", "Reset", array("class" => "btn")); ?>
+                    <?php echo Form::reset("reset", "Reset", array("class" => "btn")); ?>
                 </div>
             </fieldset>
         <?php echo Form::close(); ?>

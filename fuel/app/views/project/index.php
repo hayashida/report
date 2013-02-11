@@ -1,6 +1,8 @@
 <div class="navbar navbar-googlebar">
     <div class="navbar-inner">
-        <?php echo Html::anchor("project/create", "New Project", array("class" => "brand")); ?>
+        <ul class="nav">
+            <li><?php echo Html::anchor("project/create", "New Project"); ?></li>
+        </ul>
     </div>
 </div>
 <div class="row-fluid">

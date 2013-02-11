@@ -6,7 +6,7 @@
 return array(
 	'default' => array(
 		'connection'  => array(
-			'dsn'        => 'mysql:host=localhost;dbname=report_db',
+			'dsn'        => 'mysql:host=127.0.0.1;dbname=report_db',
 			'username'   => 'guest',
 			'password'   => 'guestp',
 		),

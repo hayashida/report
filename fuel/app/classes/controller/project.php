@@ -7,6 +7,15 @@ class Controller_Project extends Controller_Template
             "1" => "Proposal",
             "2" => "Working",
         );
+
+    public function after($response)
+    {
+        $response = parent::after($response);
+
+        $this->template->set("page", "project");
+
+        return $response;
+    }
     public function action_index()
     {
         $projects = Model_Project::find("all");
@@ -24,8 +33,16 @@ class Controller_Project extends Controller_Template
                 $project->num = $val->validated("num");
                 $project->title = $val->validated("title");
                 $project->description = Input::post("description");
-                $project->date_start = $val->validated("date_start");
-                $project->date_end = $val->validated("date_end");
+                if ($val->validated("date_start") !== "") {
+                    $project->date_start = $val->validated("date_start");
+                } else {
+                    $project->date_start = null;
+                }
+                if ($val->validated("date_end") !== "") {
+                    $project->date_end = $val->validated("date_end");
+                } else {
+                    $project->date_end = null;
+                }
                 $project->status = Input::post("status");
 
                 if ($project->save()) {
@@ -70,8 +87,16 @@ class Controller_Project extends Controller_Template
                 $project->num = $val->validated("num");
                 $project->title = $val->validated("title");
                 $project->description = Input::post("description");
-                $project->date_start = $val->validated("date_start");
-                $project->date_end = $val->validated("date_end");
+                if ($val->validated("date_start") !== "") {
+                    $project->date_start = $val->validated("date_start");
+                } else {
+                    $project->date_start = null;
+                }
+                if ($val->validated("date_end") !== "") {
+                    $project->date_end = $val->validated("date_end");
+                } else {
+                    $project->date_end = null;
+                }
                 $project->status = Input::post("status");
 
                 if ($project->save()) {
