@@ -22,15 +22,14 @@ class Controller_Ticket extends Controller_Template
     {
         if (!$project_id) {
             $project = Model_Project::find("first");
-            $project_id = $project->id;
-            $project_title = $project->title;
         } else {
             $project = Model_Project::find($project_id);
             if (! $project)
                 Response::redirect("ticket");
-
-            $project_title = $project->title;
         }
+        $project_id = $project->id;
+        $project_title = $project->title;
+
         $projects = Model_Project::find("all");
         $tickets = Model_Ticket::find("all", array(
                 "where" => array(
@@ -39,6 +38,7 @@ class Controller_Ticket extends Controller_Template
             ));
 
         $this->template->content = View::forge("ticket/index");
+        $this->template->content->set_safe("project_id", $project_id);
         $this->template->content->set_safe("project_title", $project_title);
         $this->template->content->set_safe("projects", $projects);
         $this->template->content->set_safe("tickets", $tickets);
@@ -63,6 +63,8 @@ class Controller_Ticket extends Controller_Template
             } else {
                 Session::set_flash("errors", $val->show_errors());
             }
+        } else {
+            $project = Input::get("project");
         }
         $this->get_projects();
 
@@ -70,6 +72,10 @@ class Controller_Ticket extends Controller_Template
         $this->template->content->set_safe("subtitle", "Create");
         $this->template->content->set_safe("opt_projects", $this->opt_projects);
         $this->template->content->set_safe("opt_status", $this->opt_status);
+
+        if (isset($project)) {
+            $this->template->content->set_safe("project", $project);
+        }
     }
 
     public function action_show($id = null)

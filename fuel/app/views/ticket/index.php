@@ -14,7 +14,7 @@
                     </ul>
                 </div>
             </li>
-            <li><?php echo Html::anchor("ticket/create", "New Ticket"); ?></li>
+            <li><?php echo Html::anchor("ticket/create?project=".$project_id, "New Ticket"); ?></li>
         </ul>
         <form class="navbar-form pull-right">
             <input type="text" name="" id="" placeholder="Search">

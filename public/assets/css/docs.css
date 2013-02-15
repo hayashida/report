@@ -23,8 +23,9 @@
 ul.nav-list {
   padding-bottom: 10px;
   border: solid 1px #dddddd;
+  background: #f9f9f9;
 }
-/* line 26, ../../../fuel/app/assets-compass/sass/docs.scss */
+/* line 27, ../../../fuel/app/assets-compass/sass/docs.scss */
 ul.nav-list a.btn-primary {
   margin-left: 0;
   margin-right: 0;
@@ -32,17 +33,17 @@ ul.nav-list a.btn-primary {
   color: #fff;
 }
 
-/* line 33, ../../../fuel/app/assets-compass/sass/docs.scss */
+/* line 34, ../../../fuel/app/assets-compass/sass/docs.scss */
 ul.dropdown-menu {
   padding-top: 5px;
 }
 
-/* line 38, ../../../fuel/app/assets-compass/sass/docs.scss */
+/* line 39, ../../../fuel/app/assets-compass/sass/docs.scss */
 .docs-tooltip p {
   display: none;
 }
 
-/* line 43, ../../../fuel/app/assets-compass/sass/docs.scss */
+/* line 44, ../../../fuel/app/assets-compass/sass/docs.scss */
 h3 {
   border-bottom: 1px solid #e5e5e5;
   font-size: 21px;
@@ -51,12 +52,12 @@ h3 {
   color: #333;
 }
 
-/* line 51, ../../../fuel/app/assets-compass/sass/docs.scss */
+/* line 52, ../../../fuel/app/assets-compass/sass/docs.scss */
 dl dt {
   line-height: 25px;
   font-size: 14px;
 }
-/* line 55, ../../../fuel/app/assets-compass/sass/docs.scss */
+/* line 56, ../../../fuel/app/assets-compass/sass/docs.scss */
 dl dd {
   line-height: 25px;
 }
