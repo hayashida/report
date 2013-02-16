@@ -16,3 +16,4 @@ nbproject/
 /fuel/app/config/crypt.php
 
 /fuel/app/assets-compass/.sass-cache
+.htaccess

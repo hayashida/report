@@ -16,6 +16,7 @@
  */
 
 return array(
+    // "profiling" => true,
     "index_file" => "index.php",
     "default_timezone" => "Asia/Tokyo",
     "always_load" => array(

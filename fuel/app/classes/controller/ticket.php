@@ -20,6 +20,7 @@ class Controller_Ticket extends Controller_Template
 
     public function action_index($project_id = null)
     {
+        // 特定のプロジェクト情報を取得
         if (!$project_id) {
             $project = Model_Project::find("first");
         } else {
@@ -27,15 +28,31 @@ class Controller_Ticket extends Controller_Template
             if (! $project)
                 Response::redirect("ticket");
         }
+
         $project_id = $project->id;
         $project_title = $project->title;
 
+        // プロジェクト切替用に情報を取得
         $projects = Model_Project::find("all");
-        $tickets = Model_Ticket::find("all", array(
-                "where" => array(
-                        array("project_id", $project_id)
-                    )
-            ));
+
+        // 検索文字キーワード
+        $where_arr = array();
+        $where_arr[] = array("project_id", $project_id);
+        $search = Input::get("search", "");
+        $search_arr = preg_split("/[\s,]+/", trim(mb_convert_kana($search, "s")));
+        foreach ($search_arr as $search_tmp) {
+            if ($search_tmp === ":none") {
+                $where_arr[] = array("status" => "0");
+            } elseif ($search_tmp === ":complete") {
+                $where_arr[] = array("status" => "1");
+            } else {
+                $where_arr[] = array("category", "LIKE", "%".$search_tmp."%");
+            }
+        }
+        $tickets = Model_Ticket::find("all"
+                        , array(
+                            "where" => $where_arr
+                        ));
 
         $this->template->content = View::forge("ticket/index");
         $this->template->content->set_safe("project_id", $project_id);

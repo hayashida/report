@@ -10,5 +10,6 @@ return array(
 			'username'   => 'guest',
 			'password'   => 'guestp',
 		),
+        // 'profiling' => true,
 	),
 );
